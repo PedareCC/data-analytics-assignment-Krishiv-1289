@@ -1,26 +1,26 @@
 Country,Trips Ending March 2019,Trips Ending March 2024,Spend Ending March 2019,Spend Ending March 2024
-New Zealand,"1,262","1,216","2,578","3,332"
-Japan,438,314,"1,969","1,953"
-Hong Kong,272,189,"1,264","1,228"
-Singapore,393,325,"1,511","1,594"
-Malaysia,350,169,"1,304",890
-Indonesia,187,190,801,"1,104"
-Taiwan,185,128,"1,034",900
+New Zealand,1262,1216,2578,3332
+Japan,438,314,1969,1953
+Hong Kong,272,189,1264,1228
+Singapore,393,325,1511,1594
+Malaysia,350,169,1304,890
+Indonesia,187,190,801,1104
+Taiwan,185,128,1034,900
 Thailand,92,90,454,584
-Vietnam,-,166,-,"1,094"
-Philippines,-,156,-,738
-Korea,263,301,"1,491","1,813"
-China,"1,329",681,"11,969","8,583"
-India,343,390,"1,691","2,342"
-Other Asia(c),397,200,"1,927","1,430"
-United States of America,750,663,"3,982","4,554"
-Canada,176,155,884,"1,051"
-United Kingdom,673,578,"3,349","4,164"
-Germany,199,151,"1,158","1,169"
+Vietnam,,166,,1094
+Philippines,,156,,738
+Korea,263,301,1491,1813
+China,1329,681,11969,8583
+India,343,390,1691,2342
+Other Asia(c),397,200,1927,1430
+United States of America,750,663,3982,4554
+Canada,176,155,884,1051
+United Kingdom,673,578,3349,4164
+Germany,199,151,1158,1169
 Scandinavia,106,79,670,574
 France,137,114,852,914
 Italy,75,62,500,459
 Netherlands,57,50,356,424
 Switzerland,54,40,401,381
-Other Europe,257,249,"1,464","1,742"
-Other Countries,540,524,"2,729","3,778"
+Other Europe,257,249,1464,1742
+Other Countries,540,524,2729,3778
