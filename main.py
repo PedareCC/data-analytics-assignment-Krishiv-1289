@@ -2,7 +2,7 @@ import pandas as pd
 import time
 import os
 import matplotlib.pyplot as plt
-import seaborn as sns  # Ensure you have this import for the color palette
+import seaborn as sns  
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -17,7 +17,7 @@ def travelcompare():
     df.to_csv('Tourism_cleaned.csv', index=False)
 
     new_df = pd.read_csv('Tourism_cleaned.csv')
-    print(new_df)
+    #print(new_df)
 
     total_2019 = new_df['Trips Ending March 2019'].sum()
     total_2024 = new_df['Trips Ending March 2024'].sum()
@@ -70,9 +70,45 @@ def spenddata():
     plt.savefig('Trips_and_Spend_Comparison.png')
     plt.show()
 
+
+def top5():
+    df = pd.read_csv('Tourism.csv')
+    
+    df['Trips Ending March 2019'] = pd.to_numeric(df['Trips Ending March 2019'], errors='coerce')
+    df['Trips Ending March 2024'] = pd.to_numeric(df['Trips Ending March 2024'], errors='coerce')
+    
+    df.fillna(0, inplace=True)
+
+    df = df.drop_duplicates(subset='Country')
+
+    top5_2019 = df.nlargest(5, 'Trips Ending March 2019')[['Country', 'Trips Ending March 2019']]
+    top5_2024 = df.nlargest(5, 'Trips Ending March 2024')[['Country', 'Trips Ending March 2024']]
+
+    print("Top 5 countries for Trips Ending March 2019:")
+    for index, row in top5_2019.iterrows():
+        print(f"{row['Country']}: {row['Trips Ending March 2019']} trips")
+
+    print("\nTop 5 countries for Trips Ending March 2024:")
+    for index, row in top5_2024.iterrows():
+        print(f"{row['Country']}: {row['Trips Ending March 2024']} trips")
+
+
+
+def top5_timeout():
+    return2menu = input('Would you like to return to the menu? Y/N. ')
+    if return2menu.lower == 'y':
+        return
+            
+    elif return2menu.lower == 'n':
+        time.sleep(15)
+        top5_timeout()
+
+
+
 def modeselection():
     while True:
-        print('Select a mode to see data for your selected mode: \n 1. Trips Changing \n 2. Spending \n Type "exit" to leave.')
+        clear()
+        print('Select a mode to see data for your selected mode: \n 1. Trips Changing \n 2. Spending \n 3. Top 5 Visited Countries \n Type "exit" to leave.')
         mode = input('Enter your mode with the number or say "exit": ')
 
         if mode == '1':
@@ -93,6 +129,11 @@ def modeselection():
             clear()
             print('Exited menu.')
             break
+
+        elif mode == '3':
+            top5()
+            time.sleep(15)
+            top5_timeout()
 
         else:
             print('Please select a valid option. This menu will reset in 3 seconds.')
